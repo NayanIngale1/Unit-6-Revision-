@@ -1,16 +1,13 @@
-// Write a program for toggling in the following manner
-// example code
 
-function toggler() {
-    console.log(...arguments)
+function toggler(i) {
+  return function () {
+    console.log(i);
+    ++i;
+  };
 }
 
-const toggle = toggler(1,2,3)
-console.log('toggle:', toggle)
+const toggle = toggler(1, 2, 3);
 
-// toggle()
-// 1
-// toggle()
-// 2
-// toggle()
-// 3
+toggle();
+toggle();
+toggle();
